@@ -1,0 +1,235 @@
+:root {
+    --primary-orange: #002375;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.sidebar {
+    width: 280px;
+    background-color: white;
+    height: 100vh;
+    padding: 30px 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+}
+
+/* Estilizando a logo 3D */
+.logo-3d {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px; /* Mais espaçamento para o nome */
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(20deg) rotateY(-40deg);
+}
+
+.face {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-orange);
+    border: 1px solid white;
+}
+/* Cores e posições para dar a ilusão de 3D */
+.front  { transform: translateZ(30px); }
+.back   { transform: rotateY(180deg) translateZ(30px); }
+.left   { transform: rotateY(-90deg) translateZ(30px); background-color: #002375; }
+.right  { transform: rotateY(90deg) translateZ(30px); background-color: #002375; }
+.top    { transform: rotateX(90deg) translateZ(30px); background-color: #ffd8a1; }
+.bottom { transform: rotateX(-90deg) translateZ(30px); background-color: #002375; }
+
+.site-name {
+    font-size: 1.8em;
+    color: var(--primary-orange);
+    margin: 0;
+    font-weight: bold;
+}
+
+.navigation {
+    width: 100%;
+}
+
+.nav-button {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    border: none;
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 1em;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.nav-button i {
+    margin-right: 15px;
+    font-size: 1.2em;
+}
+
+.nav-button:hover,
+.nav-button.active {
+    background-color: var(--primary-orange);
+    color: white;
+}
+
+.content-area {
+    flex-grow: 1;
+    padding: 40px;
+    position: relative;
+}
+
+.page-content {
+    display: none; /* Esconde todas as páginas por padrão */
+}
+
+.page-content.active-page {
+    display: block; /* Mostra apenas a página ativa */
+}
+
+.welcome-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5em;
+    color: var(--primary-orange);
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* adicionar css */
+/* Adicionar Css e Remover Css estão configurando a parte de adicionar alimentos */
+
+
+.form-add {
+   background-color: #f7f9fc;
+    border-left: 2px solid #0056b3;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    width: 50%;
+    height: min-content;
+}
+
+.formadd-label {
+    font-weight: 600px;
+    font-size: 17px;
+    color: #34495e;
+    margin: 5px;
+    display: block;
+}
+
+.inputsadd {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #c0ccda;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box
+}
+
+.inputsadd:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.submitadd-button {
+    background-color: #0056b3;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+    margin-top: 10px;
+    box-sizing: border-box
+
+}
+
+.submitadd-button:hover {
+    background-color: #004085;
+}
+
+/* Remover css */
+
+.form-remove {
+   background-color: #f7f9fc;
+    border-left: 2px solid red;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    width: 20%;
+    height: min-content;
+}
+
+.formremove-label {
+    font-weight: 600px;
+    font-size: 17px;
+    color: #34495e;
+    margin: 5px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+
+.inputsremove {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #c0ccda;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box
+}
+
+.inputsremove:focus {
+    outline: none;
+}
+
+.submitremove-button {
+    background-color: rgb(243, 39, 39);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 98%;
+    margin-top: 10px;
+    box-sizing: border-box
+}
+
+.submitremove-button:hover {
+    background-color: rgb(187, 3, 3)
+    
+}
+
