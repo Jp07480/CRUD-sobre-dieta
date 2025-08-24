@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DietSync</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="logo-3d">
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <h1 class="site-name">DietSync</h1>
+        </div>
+        <nav class="navigation">
+            <button class="nav-button active" data-page="home">
+                <i class="fas fa-home"></i> Início
+            </button>
+            <button class="nav-button" data-page="food-list">
+                <i class="fas fa-apple-alt"></i> Lista de Alimentos
+            </button>
+            <button class="nav-button" data-page="add-diet">
+                <i class="fas fa-plus-circle"></i> Adicionar Alimento
+            </button>
+            <button class="nav-button" data-page="view-diets">
+                <i class="fas fa-list-alt"></i> Ver Dietas
+            </button>
+            <button class="nav-button" data-page="edit-diet">
+                <i class="fas fa-edit"></i> Editar Dieta
+            </button>
+            <button class="nav-button" data-page="delete-diet">
+                <i class="fas fa-trash-alt"></i> Excluir Dieta
+            </button>
+        </nav>
+    </div>
+
+    <main class="content-area">
+        <div id="home" class="page-content active-page">
+            <h2 class="welcome-text">Seja Bem vindo ao DietSync</h2>
+            <div style="margin-top: 20px; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+    <button style="padding: 20px 90px; margin: 10px; border: none; border-radius: 8px; background-color: #003598; color: white; cursor: pointer;">
+      Criar Dieta
+    </button>
+    <button style="padding: 20px 80px; margin: 10px; border: none; border-radius: 8px; background-color: #003598; color: white; cursor: pointer;">
+      Acessar IMC
+    </button>
+    <button style="padding: 20px 40px; margin: 10px; border: none; border-radius: 8px; background-color: #003598; color: white; cursor: pointer;">
+      Resetar lista de Alimentos
+    </button>
+  </div>
+</div>
+        </div>
+        <div id="food-list" class="page-content">
+            <h3 class="form-title">Lista de Alimentos </h3>
+            <div class="list-container">
+                <div>
+                    <h4> Proteinas</h4>
+                    <ul id="protein-list"></ul>
+                </div>
+                <div>
+                    <h4> Carboidratos</h4>
+                    <ul id="carbs-list"></ul>   
+                </div>
+                <div>
+                    <h4> Gorduras</h4>
+                    <ul id="fat-list"></ul>
+                </div>
+            </div>
+        </div>                
+                <div id="add-diet" class="page-content">
+            <h3 class="form-title">Adicionar Alimento</h3>
+          <form class='form-add'id="form">
+                <h4 class="formadd-label">Nome do alimento:</h4> <input class="inputsadd" type="text" id="name" placeholder="maça"> <br>
+                 <h4 class="formadd-label">Carboidratos:</h4> <input class="inputsadd" type="text" id="carb" placeholder="13,8"> <br>
+                  <h4 class="formadd-label">Proteinas:</h4> <input class="inputsadd" type="text" id="prot" placeholder="0,3"> <br>
+                   <h4 class="formadd-label">Gorduras:</h4> <input class="inputsadd"type="text" id="gord" placeholder="0,2"> <br>
+                   <h4 class="formadd-label">Calorias:</h4> <input class="inputsadd" type="text" id="cal" placeholder="52"> <br>
+                   <button class="submitadd-button" type="button" id="btnSalvar">Adicionar</button>
+            </form>
+        </div>
+        <div id="view-diets" class="page-content">
+            <h3>Visualizar Dietas</h3>
+            <p>Tabela ou lista de dietas cadastradas aqui...</p>
+        </div>
+        <div id="edit-diet" class="page-content">
+            <h3>Editar Dieta</h3>
+            <p>Opções para editar uma dieta existente aqui...</p>
+        </div>
+        <div id="delete-diet" class="page-content">
+            <h3 class="form-title">Excluir Dieta</h3>
+            <form class="form-remove"> 
+                <h4 class="formremove-label">Nome do alimento:</h4> <input class="inputsremove" type="text" id="campo-excluir" placeholder="maça"> <br>
+                <button id='btnRemover' class="submitremove-button" type="submit">Excluir</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script type='module' src="ui.js"></script>
+</body>
+</html>
