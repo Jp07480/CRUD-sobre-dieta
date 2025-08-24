@@ -210,3 +210,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
      }
+
+     //===========================================
+     // Seção 5: Lógica para o reset dos alimentos
+     // ==========================================
+     function confirmarReset() {
+    if (confirm("Tem certeza que deseja resetar a lista de alimentos para os valores originais?")) {
+      resetFoods();
+      alert("Lista de alimentos foi resetada com sucesso!");
+      carregarAlimentos(); // <- se você tiver essa função para atualizar a lista na tela
+    }
+  }
+
+  // Botão Reset
+  document.getElementById("btnResetFoods").addEventListener("click", () => {
+    if (confirm("Tem certeza que deseja resetar a lista de alimentos para os valores originais?")) {
+      resetFoods();
+      alert("Lista de alimentos foi resetada com sucesso!");
+      // se tiver função para atualizar a tela, chame aqui
+      // carregarAlimentos();
+    }
+  });
+//Ainda estou implementando, porém não está dando erro no código, pretendo usar o resetFoods do lib para implmentar isso
